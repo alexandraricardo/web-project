@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advertisements</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/commun.css">
+</head>
+<body>
+
+    <header>
+        <nav>
+            CRUD JOBOARD
+        </nav>
+    </header>
+
+    <div id='pack'>
+        <div class="topnav">
+            <a href="#home" class="active">CRUD JOBBOARD</a>
+            <div id="myLinks">
+            <ul>
+                <li><a href="admin.html">Advertisements</a></li>
+                <li><a href="cities.html">Cities</a></li>
+                <li><a href="company.html">Companies</a></li>
+                <li><a href="users.html">Users</a></li>
+                <li><a href="jobs.html">Jobs</a></li>
+                <li><a href="contractType.html">Contracts</a></li>
+                <li><a href="usertypes.html">Users type</a></li>
+                <li><a href="job_application.html">Job applications</a></li>
+            </ul>
+            </div>
+            <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
+            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars"></i>
+            </a>
+        </div>
+
+        <main>
+            <div class="container">
+                <!-- Trigger the modal with a button -->
+                <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal" id="new">Ajouter une annonce à la database</button>
+              
+                <!-- Modal -->
+                <div class="modal fade" id="myModal" role="dialog">
+                  <div class="modal-dialog">
+                  
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Ajouter une annonce : </h4>
+                      </div>
+                      <div class="modal-body">
+                        <form  id="newadvertisement" method="POST">
+                            <div>
+                                <label for="title">Titre</label>
+                                <input class="form-control" type="text" id="title" name="title">
+                            </div>
+                            <div>
+                                <label for="description">Description</label>
+                                <textarea class="form-control" name="description" id="description" cols="30" rows="10"></textarea>
+                            </div>
+                            <div>
+                                <label for="salary">Salaire</label>
+                                <input class="form-control" type="text" id="salary" name="salary">
+                            </div>
+                            <div>
+                                <label for="company">Entreprise</label>
+                                <select class="form-control" name="company" id="company">
+            
+                                </select>
+                            </div>
+                            <div>
+                                <label for="contract_types">Ville</label>
+                                <select class="form-control" name="contract_types" id="contract_types">
+            
+                                </select>
+                            </div>
+                            <div>
+                                <label for="cities" >Conrat</label>
+                                <select class="form-control" name="cities" id="cities">
+            
+                                </select>
+                            </div>
+                            <div>
+                                <label for="experiences">Experience</label>
+                                <select class="form-control" name="experiences" id="experiences">
+            
+                                </select>
+                            </div>
+                            <div>
+                                <label for="worktime" >Temps de travail</label>
+                                <select class="form-control" name="worktime" id="worktime">
+            
+                                </select>
+                            </div>
+                            <div>
+                                <label for="job" >Métier</label>
+                                <select class="form-control" name="job" id="job">
+            
+                                </select>
+                            </div>
+                            <div>
+                                <input type="submit" id="submit" name="submit" value="Envoyer">
+                            </div>
+                        </form>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                      </div>
+                    </div>
+                    
+                  </div>
+                </div>
+                
+              </div>
+
+
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Advertisements</th>
+                    </tr>
+                </thead>
+                <tbody id="content">
+                    
+                </tbody>
+            </table>
+
+        </main>
+
+    </div>
+    <script src="assets/js/advertisement.js"></script>
+    <script>
+        function myFunction() {
+            var x = document.getElementById("myLinks");
+            if (x.style.display === "block") {
+            x.style.display = "none";
+            } else {
+            x.style.display = "block";
+            }
+        }
+    </script>
+
+</body>
+</html>
